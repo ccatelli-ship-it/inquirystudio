@@ -503,7 +503,7 @@ const UPDATES = [
   const tabs=document.getElementById('res-tabs'), panels=document.getElementById('res-panels');
   SCHEDULE.forEach((d,i)=>{
     const t=document.createElement('button');
-    t.className='subpill'+(i===0?' active':''); t.textContent='Day '+d.n+' · '+d.md; t.dataset.day=d.n;
+    t.className='subpill'+(i===0?' active':''); t.textContent=(typeof d.n==='number'?'Day '+d.n:'Launch')+' · '+d.md; t.dataset.day=d.n;
     tabs.appendChild(t);
     const items=RESOURCES[d.n]||[];
     const p=document.createElement('div');
