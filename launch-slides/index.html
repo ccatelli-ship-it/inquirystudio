@@ -67,16 +67,16 @@ body{
 .slide.active .r:nth-child(6){transition-delay:.45s}
 
 /* shared type */
-.kick{font-family:var(--font-m);font-size:clamp(10px,1.3vw,14px);letter-spacing:.26em;text-transform:uppercase;color:var(--teal);margin:0 0 clamp(12px,1.8vh,20px)}
+.kick{font-family:var(--font-m);font-size:clamp(11px,1.45vw,15px);letter-spacing:.26em;text-transform:uppercase;color:var(--teal);margin:0 0 clamp(12px,1.8vh,20px)}
 .kick .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(46,224,207,.2);margin-right:10px;vertical-align:middle;animation:pulse 1.8s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.55}}
 /* Headings: full line-height + vertical padding so Boldonse glyphs are never clipped by background-clip:text */
 h1.s,h2.s{margin:0;font-family:var(--font-d);font-weight:400;text-transform:uppercase;letter-spacing:-.005em;
   padding-block:.08em;
   background:linear-gradient(180deg,#fff 0%,#fff 64%,#b6c3df 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-h1.s{font-size:clamp(30px,5.4vw,70px);line-height:1.06}
-h2.s{font-size:clamp(24px,4.1vw,50px);line-height:1.08}
-.lead{color:var(--muted);font-size:clamp(16px,2vw,23px);line-height:1.5;margin:clamp(12px,2vh,22px) 0 0;max-width:48ch}
+h1.s{font-size:clamp(33px,5.7vw,74px);line-height:1.06}
+h2.s{font-size:clamp(26px,4.4vw,54px);line-height:1.08}
+.lead{color:var(--muted);font-size:clamp(18px,2.3vw,26px);line-height:1.5;margin:clamp(12px,2vh,22px) 0 0;max-width:48ch}
 .accent{font-style:italic;
   background:linear-gradient(92deg,var(--amber),var(--orange) 40%,var(--coral) 72%,var(--teal));
   -webkit-background-clip:text;background-clip:text;color:transparent}
@@ -85,7 +85,7 @@ h2.s{font-size:clamp(24px,4.1vw,50px);line-height:1.08}
 
 /* lists */
 ul.clean{list-style:none;margin:clamp(14px,2.4vh,28px) 0 0;padding:0;display:grid;gap:clamp(10px,1.6vh,16px)}
-ul.clean li{position:relative;padding-left:32px;font-size:clamp(15px,1.95vw,21px);line-height:1.45;color:var(--fg)}
+ul.clean li{position:relative;padding-left:32px;font-size:clamp(17px,2.2vw,24px);line-height:1.45;color:var(--fg)}
 ul.clean li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border-radius:50%;
   background:var(--accent-c,var(--teal));box-shadow:0 0 14px var(--accent-c,var(--teal))}
 
@@ -93,8 +93,8 @@ ul.clean li::before{content:"";position:absolute;left:0;top:.5em;width:12px;heig
 .grid{display:grid;gap:clamp(11px,1.6vw,18px);margin-top:clamp(16px,2.6vh,26px)}
 .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
 .mini{padding:clamp(14px,1.9vw,22px)}
-.mini h4{margin:0 0 6px;font-family:var(--font-b);font-weight:700;font-size:clamp(15px,1.8vw,19px);color:#fff}
-.mini p{margin:0;font-size:clamp(12px,1.45vw,16px);line-height:1.42;color:var(--muted)}
+.mini h4{margin:0 0 6px;font-family:var(--font-b);font-weight:700;font-size:clamp(16px,2vw,21px);color:#fff}
+.mini p{margin:0;font-size:clamp(13px,1.6vw,18px);line-height:1.42;color:var(--muted)}
 .mini .ic{width:clamp(26px,3vw,34px);height:clamp(26px,3vw,34px);margin-bottom:9px;color:var(--accent-c,var(--teal))}
 /* slide-6 original icons, recolored to each card's accent via mask */
 .ic6{display:block;width:clamp(30px,3.4vw,42px);height:clamp(30px,3.4vw,42px);margin-bottom:10px;
@@ -129,7 +129,7 @@ svg.icon{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;strok
 .profile img{width:clamp(120px,17vw,184px);height:clamp(120px,17vw,184px);object-fit:cover;object-position:50% 50%;border-radius:20px;
   border:2px solid var(--accent-c,var(--teal));box-shadow:0 12px 30px rgba(0,0,0,.4),0 0 26px color-mix(in oklab,var(--accent-c,var(--teal)) 30%,transparent)}
 .profile h3{margin:0;font-family:var(--font-d);font-weight:400;font-size:clamp(18px,2.4vw,30px);color:#fff;text-transform:uppercase;line-height:1.08;padding-block:.04em}
-.profile .role{font-family:var(--font-m);font-size:clamp(11px,1.4vw,15px);letter-spacing:.08em;color:var(--accent-c,var(--teal))}
+.profile .role{font-family:var(--font-m);font-size:clamp(12px,1.5vw,16px);letter-spacing:.08em;color:var(--accent-c,var(--teal))}
 
 /* quote */
 .bigquote{font-family:var(--font-d);font-style:italic;font-weight:400;font-size:clamp(24px,4.2vw,52px);line-height:1.2;letter-spacing:-.01em;
@@ -146,8 +146,8 @@ svg.icon{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;strok
 .col{padding:clamp(16px,2.2vw,26px)}
 .col .tag{display:inline-block;font-family:var(--font-m);font-weight:600;font-size:clamp(10px,1.3vw,13px);letter-spacing:.12em;text-transform:uppercase;
   color:#0f1b41;background:var(--accent-c,var(--teal));padding:5px 12px;border-radius:999px;margin-bottom:12px}
-.col h4{margin:0 0 10px;font-family:var(--font-d);font-weight:400;font-size:clamp(16px,2.2vw,25px);color:#fff;text-transform:uppercase;padding-block:.04em}
-.col p,.col li{font-size:clamp(13px,1.6vw,17px);line-height:1.45;color:var(--muted)}
+.col h4{margin:0 0 10px;font-family:var(--font-d);font-weight:400;font-size:clamp(17px,2.3vw,26px);color:#fff;text-transform:uppercase;padding-block:.04em}
+.col p,.col li{font-size:clamp(15px,1.8vw,19px);line-height:1.45;color:var(--muted)}
 
 /* externship image */
 .shot{max-width:100%;max-height:min(50vh,460px);border-radius:14px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.4);display:block}
@@ -159,13 +159,15 @@ svg.icon{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;strok
 
 /* resources */
 .reslist{columns:2;column-gap:clamp(20px,4vw,54px);margin-top:clamp(16px,2.6vh,26px)}
-.reslist .ri{break-inside:avoid;display:flex;gap:12px;align-items:flex-start;padding:clamp(10px,1.5vh,14px) 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.reslist .ri{break-inside:avoid;display:flex;gap:12px;align-items:flex-start;padding:clamp(8px,1.2vh,12px) 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .reslist .ri .n{font-family:var(--font-m);font-weight:600;font-size:clamp(11px,1.4vw,14px);color:var(--green);padding-top:3px;flex:none}
-.reslist .ri p{margin:0;font-size:clamp(13px,1.55vw,17px);line-height:1.35;color:var(--fg)}
+.reslist .ri p{margin:0;font-size:clamp(14px,1.7vw,19px);line-height:1.4;color:var(--fg)}
+.reslist .ri a{color:var(--fg);text-decoration:underline;text-decoration-color:rgba(46,224,207,.55);text-underline-offset:3px;transition:color .15s}
+.reslist .ri a:hover{color:var(--teal)}
 
 /* meta row */
 .metarow{display:flex;flex-wrap:wrap;gap:clamp(10px,2vw,18px);margin-top:clamp(14px,2.4vh,24px)}
-.metarow span{font-family:var(--font-m);font-size:clamp(11px,1.4vw,15px);letter-spacing:.06em;color:var(--fg);
+.metarow span{font-family:var(--font-m);font-size:clamp(12px,1.5vw,16px);letter-spacing:.06em;color:var(--fg);
   border:1px solid var(--line);background:var(--glass);padding:10px 16px;border-radius:999px}
 .metarow span b{color:var(--teal)}
 
@@ -504,14 +506,14 @@ svg.icon{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;strok
       <p class="kick r"><span class="dot"></span> Go Deeper</p>
       <h2 class="s r">Curated Resources That Might Help</h2>
       <div class="reslist r">
-        <div class="ri"><span class="n">01</span><p>Fostering Belonging in the Classroom: Strategies for Instructors</p></div>
-        <div class="ri"><span class="n">02</span><p>Guide for Inclusive Teaching at Columbia</p></div>
-        <div class="ri"><span class="n">03</span><p>Foster an Educator Culture of Collective Efficacy</p></div>
-        <div class="ri"><span class="n">04</span><p>6 Strategies for Building Stronger Collective Efficacy</p></div>
-        <div class="ri"><span class="n">05</span><p>Designing for Belonging — Victor Cary &amp; Susie Wise</p></div>
-        <div class="ri"><span class="n">06</span><p>Cultivating Belonging in the Elementary Classroom All Year Long</p></div>
-        <div class="ri"><span class="n">07</span><p>School Belonging: Evidence, Experts, and Everyday Gaps</p></div>
-        <div class="ri"><span class="n">08</span><p>Approaches to Teacher Well-Being</p></div>
+        <div class="ri"><span class="n">01</span><p><a href="http://ctl.columbia.edu/resources-and-technology/resources/belonging-in-classroom" target="_blank" rel="noopener">Fostering Belonging in the Classroom: Strategies for Instructors</a></p></div>
+        <div class="ri"><span class="n">02</span><p><a href="https://ctl.columbia.edu/resources-and-technology/resources/inclusive-teaching-guide/" target="_blank" rel="noopener">Guide for Inclusive Teaching at Columbia</a></p></div>
+        <div class="ri"><span class="n">03</span><p><a href="https://www.naesp.org/resource/foster-an-educator-culture-of-collective-efficacy/" target="_blank" rel="noopener">Foster an Educator Culture of Collective Efficacy</a></p></div>
+        <div class="ri"><span class="n">04</span><p><a href="https://www.novakeducation.com/blog/6-strategies-for-building-stronger-collective-efficacy" target="_blank" rel="noopener">6 Strategies for Building Stronger Collective Efficacy</a></p></div>
+        <div class="ri"><span class="n">05</span><p><a href="https://free-range-humans.simplecast.com/episodes/35-cary-wise-6SQzyoLa" target="_blank" rel="noopener">Designing for Belonging — Victor Cary &amp; Susie Wise</a></p></div>
+        <div class="ri"><span class="n">06</span><p><a href="https://www.edutopia.org/article/culture-belonging-elementary-school" target="_blank" rel="noopener">Cultivating Belonging in the Elementary Classroom All Year Long</a></p></div>
+        <div class="ri"><span class="n">07</span><p><a href="https://link.springer.com/article/10.1007/s10648-025-10055-x" target="_blank" rel="noopener">School Belonging: Evidence, Experts, and Everyday Gaps</a></p></div>
+        <div class="ri"><span class="n">08</span><p><a href="http://ed.gov/media/document/eirteacher-wellbeing508-107807.pdf" target="_blank" rel="noopener">Approaches to Teacher Well-Being</a></p></div>
       </div>
     </div>
   </section>
