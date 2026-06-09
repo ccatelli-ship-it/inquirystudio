@@ -100,7 +100,7 @@ a{color:inherit}
 
 /* ── Resource tiles ── */
 .res-tools-head{margin:26px 0 12px;font-family:var(--font-m);font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-d)}
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:6px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,140px));gap:12px;margin-bottom:6px;justify-content:start}
 .tile{position:relative;display:block;text-decoration:none;border-radius:14px;overflow:hidden;aspect-ratio:1/1;
   background:var(--tile-color,#1f6fb2);box-shadow:0 6px 22px rgba(15,27,65,.12);transition:transform .2s,box-shadow .2s}
 .tile:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(15,27,65,.18)}
@@ -316,7 +316,7 @@ STEPS.forEach((s, i) => {
     <div class="res-tools-head">Resources &amp; Tools</div>
     <div class="tiles">
       ${s.tools.map(t => `
-        <a class="tile" href="${t.url}" style="--tile-color:${t.color}">
+        <a class="tile" href="${t.url}" style="--tile-color:${s.color}">
           <span class="tile-title">${t.title}</span>
           <div class="tile-art">${t.svg}</div>
           <div class="tile-hover">
