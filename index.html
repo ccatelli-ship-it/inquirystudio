@@ -356,7 +356,11 @@ const SCHEDULE = [
     where:"Externship site → mystery location",
     tags:[["half","Half Day"],["mystery","Mystery Location"]],
     body:"Morning at the externship. In the afternoon, teams gather at a mystery location for guided reflection — using the Inquiry Boxes to make sense of what they've seen.",
-    links:EXTERNSHIP_LINKS },
+    links:[...EXTERNSHIP_LINKS,
+      { label:"Personal Values Activity", url:"personal-values/" },
+      { label:"Teaching Values Activity", url:"teaching-values/" },
+      { label:"Shared Values Activity",   url:"shared-values/" },
+    ] },
 
   { n:3, dow:"Wednesday", md:"Jun 10", color:"var(--teal-d)",
     title:"Workshop Session", when:"8:30 AM – 3:00 PM",
@@ -437,6 +441,9 @@ const RESOURCES = {
   2:[
     { type:"Externship Agenda", title:"WHS | BUILD", desc:"Externship day agenda for the BUILD team.", url:BUILD_AGENDA },
     { type:"Externship Agenda", title:"WHS | STEM",  desc:"Externship day agenda for the STEM team.",  url:STEM_AGENDA },
+    { type:"Activity", title:"Personal Values Activity", desc:"Identify your core personal values as a foundation for design.", url:"personal-values/" },
+    { type:"Activity", title:"Teaching Values Activity", desc:"Explore the values that guide your practice as an educator.", url:"teaching-values/" },
+    { type:"Activity", title:"Shared Values Activity",   desc:"Build shared values as a team to align your collaborative work.", url:"shared-values/" },
   ],
   3:[], 4:[], 5:[]
 };
