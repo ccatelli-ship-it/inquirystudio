@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Inquiry Studio · Day 3 Session</title>
+<title>Inquiry Studio · Day 4 Session</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -350,6 +350,32 @@ svg.icon{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;strok
 .qrbox{flex:none;width:clamp(150px,18vw,216px);background:#fff;border-radius:18px;padding:clamp(12px,1.4vw,18px);box-shadow:0 10px 30px rgba(0,0,0,.34)}
 .qrbox img{display:block;width:100%;height:auto}
 
+/* ===== word cloud (Good Morning! theme words) ===== */
+.wordle{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(8px,1.6vw,26px);
+  margin-top:clamp(18px,3.2vh,38px);line-height:1.05}
+.wordle span{font-family:var(--font-d);font-weight:400;text-transform:uppercase;display:inline-block;padding:.06em .12em;
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 16px rgba(0,0,0,.3));transition:transform .3s}
+.wordle span:hover{transform:scale(1.06) rotate(0deg)!important}
+
+/* ===== need-to-know buckets ===== */
+.buckets{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.9vw,24px);margin-top:clamp(16px,2.4vh,28px)}
+@media(max-width:760px){.buckets{grid-template-columns:1fr}}
+.bucket{border-radius:18px;padding:clamp(16px,2vw,28px) clamp(12px,1.5vw,20px);background:var(--bc);color:#fff;
+  display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1.4vh,16px);box-shadow:0 0 28px color-mix(in oklab,var(--bc) 38%,transparent)}
+.bucket .blab{font-family:var(--font-b);font-weight:700;font-size:clamp(18px,2.3vw,28px);text-align:center;line-height:1.18}
+.bucket .bq{font-family:var(--font-d);font-size:clamp(40px,6.5vw,78px);line-height:1;opacity:.92}
+
+/* ===== question hierarchy (essential → key → sub) ===== */
+.htree{margin-top:clamp(16px,2.4vh,28px);display:flex;flex-direction:column;gap:clamp(10px,1.7vh,18px)}
+.htree .row{display:grid;gap:clamp(10px,1.5vw,18px)}
+.htree .mids{grid-template-columns:repeat(3,1fr)}
+.htree .subs{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+@media(max-width:760px){.htree .mids{grid-template-columns:1fr}}
+.htree .hbox{background:var(--accent-c,var(--green));color:#0f1b41;border-radius:14px;padding:clamp(12px,1.7vw,22px);text-align:center;
+  font-family:var(--font-b);font-weight:700;font-size:clamp(15px,1.9vw,24px);box-shadow:0 6px 20px rgba(0,0,0,.26)}
+.htree .top .hbox{font-family:var(--font-d);font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(20px,3vw,40px);padding-block:.18em}
+.htree .subs .hbox{background:color-mix(in oklab,var(--accent-c,var(--green)) 66%,#0f1b41);color:#fff;font-size:clamp(13px,1.6vw,19px);font-weight:600}
+
 /* ====== nav, counter, hint ====== */
 .counter{position:fixed;left:clamp(18px,3vw,34px);bottom:clamp(16px,2.6vh,26px);z-index:60;font-family:var(--font-m);font-size:14px;color:var(--muted)}
 .counter b{color:#fff}
@@ -468,278 +494,165 @@ const ACCENTS=['var(--teal)','var(--blue)','var(--coral)','var(--green)','var(--
 
 /* ===== SLIDES ===== */
 const SLIDES=[
- {type:'title', label:'Welcome · Day 3',
+ {type:'title', label:'Welcome · Day 4',
    brand:'Inquiry Studio', sub:'Summer Session', meta:'June 8 – June 12, 2026',
-   day:'Day 3', focus:'Curriculum Alignment &middot; Driving Question'},
+   day:'Day 4', focus:'Driving Questions &middot; Need-to-Knows &middot; Project Design'},
 
- {type:'welcome', label:'Welcome Back!', icon:'coffee', accent:'var(--amber)',
-   kick:'By 8:40 AM, please…', title:'Welcome Back!',
-   checklist:['Help yourself to coffee &/or tea','Sign in','Rank Order: 8 Components of a Reflective Classroom'],
-   note:'<b>Rank Order Protocol</b> — Individually rank the 8 Components from most important (#1) to least important to you as a teacher. Be ready to explain your reasoning.',
-   chips:['Mutual Respect','Intentional Use of Space','Culture of Questioning','Thoughtful Silence','Student-to-Student Discussion','Real-World Content','Multiple Ways to Express Learning','Diverse Viewpoints']},
+ {type:'welcome', label:'Good Morning!', icon:'coffee', accent:'var(--amber)',
+   kick:'By 8:40 AM, please…', title:'Good Morning!',
+   checklist:['Sign in','Get comfortable','Find a seat'],
+   wordle:[
+     {t:'Collaboration', size:'clamp(34px,6vw,84px)', rot:-3, g:'linear-gradient(180deg,#fff,#1f8fd6)'},
+     {t:'Creativity', size:'clamp(30px,5.2vw,68px)', rot:-5, g:'linear-gradient(180deg,#ffd66b,#ffb43d)'},
+     {t:'Teamwork', size:'clamp(28px,4.8vw,62px)', rot:3, g:'linear-gradient(180deg,#ff9d78,#ff7a4d)'},
+     {t:'Real-World', size:'clamp(26px,4.4vw,56px)', rot:5, g:'linear-gradient(180deg,#2ee0cf,#137c78)'},
+     {t:'OYS', size:'clamp(24px,4vw,52px)', rot:-7, g:'linear-gradient(180deg,#8fd97f,#5fae51)'}]},
 
- {type:'section', label:'Shuffle & Share', icon:'shuffle', accent:'var(--teal)', title:'Shuffle &amp; Share'},
-
- {type:'cards', label:'Pre-Conditions for PBL', icon:'shield', accent:'var(--blue)',
-   kick:'Pre-Conditions for PBL', title:'Creating a Classroom that Supports PBL', cols:'g2',
-   cards:[
-     {icon:'heart', h4:'Classroom Culture', p:'Trust, safety, and belonging.', c:'var(--coral)', hot:true},
-     {icon:'rocket', h4:'Student Readiness', p:'Skills, mindsets, and confidence.', c:'var(--teal)', hot:true},
-     {icon:'layers', h4:'Instructional Structures', p:'Time, space, and scaffolds.', muted:true},
-     {icon:'check', h4:'Feedback & Assessment', p:'Clarity and transparency.', muted:true}]},
-
- {type:'quote', label:'Quote · Thermostat', accent:'var(--coral)',
-   quote:'Culture will happen in our classrooms, with or without us. We can choose the thermometer approach and become bystanders, or take influential steps. Every single moment with our students is an amazing opportunity to build culture. Take advantage. Be a thermostat.',
-   attr:'Eric White · PBLWorks National Faculty'},
-
- {type:'list', label:'Shared Values Poster', icon:'edit', accent:'var(--green)',
-   kick:'Pre-Conditions for PBL', title:'Write Your Shared Values',
-   lead:'On your BIG poster, write your shared values and value-in-action frames.',
-   statement:'Students will know we value <span class="fill">[shared value]</span> when they consistently experience <span class="fill">[visible behavior]</span>.'},
-
- {type:'list', label:'Connecting the Dots', icon:'link', accent:'var(--teal)', format:'Whole-Group Share-Out',
-   kick:'Pre-Conditions for PBL', title:'Connecting the Dots',
-   lead:'Connect your shared values to the 8 Components of a Reflective Classroom.',
-   bullets:['Where do your shared values show up in your reflective classroom priorities?','Explain to the group what this looks like in your classroom — or what you want it to look like.']},
-
- {type:'video', label:'Safe & Challenging Space', accent:'var(--coral)',
-   kick:'Creating a Safe & Challenging Space for Growth', title:'Identity & Belonging',
-   lead:'Can we create a space — here and in our classrooms — where we and our students can take risks, make mistakes, and think critically?',
-   video:{url:'https://www.facinghistory.org/resource-library/john-amaechi-discusses-identity', label:'Watch · John Amaechi Discusses Identity', source:'facinghistory.org'}},
-
- {type:'twolist', label:'Norms · Rank Order', icon:'rank', accent:'var(--blue)', timer:6,
-   kick:'Creating a Safe & Challenging Space', title:'Rank Order the Norms',
-   cols:[
-     {icon:'clock', h4:'Rank Order Protocol', items:['2 min — Individually rank the norms #1 (most important) to #5 (least) as a learner.','1 min — Assign a Facilitator/Timekeeper (next birthday).','5 min — As a team, compare rankings from #1 to #5.','Which norm is most challenging for you? How can teammates support you?']},
-     {icon:'users', h4:'Norms', items:['Be open-minded & respect others’ point of view.','Presume positive intentions.','Listen actively.','Notice moments of discomfort and stay curious.','Step up, and step back.']}]},
-
- {type:'section', label:'Why Are We Here?', icon:'q', accent:'var(--amber)', title:'Why Are We Here?'},
-
- {type:'cards', label:'We’re Here Because…', icon:'building', accent:'var(--blue)',
-   kick:'We’re Here Because…', title:'GSPP Consortium Grant',
-   lead:'A blueprint for CTE Pathways in Sonoma County.', cols:'g3',
-   cards:[
-     {icon:'clock', h4:'Grant Length', p:'2023 – 2029'},
-     {icon:'scale', h4:'Award', p:'$1,503,971'},
-     {icon:'users', h4:'Who’s Included', p:'WUSD, SRCS, WSCUHSD, PCS, SVUSD, Credo, SRJC'}]},
-
- {type:'section', label:'What’s Shifting in CTE?', icon:'refresh', accent:'var(--teal)', title:'What’s Shifting in CTE?'},
-
- {type:'shift', label:'Integrated Program of Study', icon:'refresh', accent:'var(--coral)',
-   kick:'The Shift', title:'An Integrated Program of Study is the Expectation',
-   from:'CTE Pathway = a vehicle to deliver <b>career readiness</b> as a stand-alone elective.',
-   to:'CTE Pathway (Integrated) = a vehicle to deliver <b>career AND college readiness</b>.',
-   note:'A comprehensive system that aligns high school & postsecondary curricula, offers rigorous postsecondary credit & credentials, and provides real-world learning experiences.',
-   tag:'College AND Career Readiness'},
-
- {type:'figure', label:'College Enrollment', accent:'var(--amber)',
-   kick:'Data Story Behind the Shift', title:'College Enrollment Is Falling',
-   img:'s13_enrollment', cap:'College-going rate over time.',
-   bullets:['<b>62%</b> enroll in college after high school nationally.','<b>61%</b> enroll (4-year & 2-year) in Sonoma County.']},
-
- {type:'figure', label:'Gen Z Trends', accent:'var(--green)',
-   kick:'Postsecondary Education Trends', title:'Gen Z | Postsecondary Trends',
-   img:'s14_genz',
-   bullets:['Four-year college is still the most common plan — but more students are weighing other options.','It is our responsibility to prepare students for <b>ALL</b> post-secondary options.']},
-
- {type:'bars', label:'County-Wide Data', accent:'var(--blue)',
-   kick:'County-Wide Data', title:'What Students Are Planning',
-   lead:'The mix of postsecondary paths Sonoma County students are considering.',
-   charts:[
-     {title:'Four-Year College', color:'var(--orange)', bars:[
-       {v:69,label:'Want to go to college'},{v:42,label:'Expect to go to 4-yr'},{v:38,label:'Qualified for UC/CSU'},{v:23,label:'Directly to 4-yr'}]},
-     {title:'Two-Year College', color:'var(--blue)', bars:[
-       {v:69,label:'Want to go to college'},{v:15,label:'Expect to go to 2-yr'},{v:38,label:'Attend 2-yr colleges'}]}]},
-
- {type:'figure', label:'Consortium Pathways', accent:'var(--teal)',
-   kick:'GSPP Consortium', title:'Pathways Across the Consortium',
-   img:'s17_table', cap:'Sector & pathway by consortium member.'},
-
- {type:'figure', label:'What is a GSPP IPS?', accent:'var(--teal)',
-   kick:'GSPP Appendix i', title:'What is an Integrated Program of Study?',
-   img:'s18_gspp_model', cap:'The GSPP integrated program-of-study model.',
-   bullets:['College-preparatory A–G academic coursework.','Opportunity for 12 ECC postsecondary credits.','CTE at the core.','<b>Integration strategies:</b> Graduate Profile Skills, Design of Coursework, Student Cohorts, Assessment.']},
-
- {type:'section', label:'Why Inquiry Studio?', icon:'rocket', accent:'var(--coral)', title:'Why Inquiry Studio?'},
-
- {type:'table', label:'YouthTruth · CTE vs Not', accent:'var(--green)',
-   kick:'YouthTruth · Percent Positives', title:'Students in Pathways Report More Positives',
-   lead:'Percent Positives = the % whose average rating across a theme was greater than 3.5 / 5. Students in a CTE pathway and in Work-Based Learning report higher positives on every measure.',
-   headers:['Measure','CTE · No','CTE · Yes','WBL · No','WBL · Yes'], highlight:[2,4],
-   rows:[
-     ['Culture','50%','55%','47%','59%'],
-     ['Relationships','27%','30%','25%','33%'],
-     ['College & Career Readiness','35%','41%','31%','46%'],
-     ['Academic Challenge','32%','40%','28%','45%'],
-     ['Engagement','50%','57%','47%','62%'],
-     ['Belonging & Peer Collaboration','45%','53%','42%','55%']],
-   note:'Highlighted columns = students <b>in</b> a CTE pathway / Work-Based Learning.'},
-
- {type:'stat', label:'The Belonging Gap', accent:'var(--amber)',
-   kick:'YouthTruth', title:'A Real-World Gap', bridge:'HOWEVER',
-   stats:[{num:'47%', cap:'agree: “I care more about what I’m learning when I feel like I’m solving a real-world problem.”'},{num:'30%', cap:'agree: “The work I do for my classes gives me the opportunity to solve real-world problems.”'}]},
-
- {type:'table', label:'High-Leverage Questions', accent:'var(--teal)', q:true,
-   kick:'YouthTruth', title:'High-Leverage YT Questions',
-   lead:'High-leverage = a strong relationship to other questions (High = r ≥ 0.60).',
-   headers:['YouthTruth Question','r · Own Domain','r · Other Domains','Rank'], highlight:[1],
-   rows:[
-     ['What I learn in class helps me outside of school. <span class="dom">Engagement</span>','0.93','0.66','#4'],
-     ['My teachers give me assignments that help me better understand the subject. <span class="dom">Academic Challenge</span>','0.93','0.65','#8'],
-     ['The work I do for my classes gives me the opportunity to solve real-world problems. <span class="dom">Work-Based · Career Connect</span>','0.89','0.64','#12'],
-     ['Most of my teachers want us to use our thinking skills, not just memorize things. <span class="dom">Academic Challenge</span>','0.82','0.64','#13']],
-   note:'*63 survey questions total.'},
-
- {type:'figure', label:'Sonoma Seven · Outcome #1', accent:'var(--green)',
-   kick:'Sonoma Seven Pathways Grant | Outcome #1', title:'Inquiry Studio & Fellowship',
-   img:'s23_sonoma', cap:'GSPP Consortium work-groups hierarchy.',
-   bullets:['Inclusive, ongoing PD for consortium pathway teachers.','Supports the design & implementation of integrated PBL units.','Leverages teacher externships with local industry partners.']},
-
- {type:'figure', label:'PBL = the Vehicle', accent:'var(--blue)',
-   kick:'PBL', title:'The Vehicle to Deliver Curriculum',
-   img:'s24_pbl_vehicle', cap:'PBL = student-led learning driven by inquiry.'},
-
- {type:'section', label:'Go Back, To Go Forward', icon:'refresh', accent:'var(--coral)',
-   title:'Go Back, To Go Forward', lead:'Let’s revisit and finish our PBL Slice.'},
-
- {type:'statement-slide', label:'Driving Question', icon:'q', accent:'var(--teal)',
-   kick:'Driving Question', title:'Our PBL Slice',
-   statement:'How might we strengthen student belonging by changing classroom practice, adult culture, or both?'},
-
- {type:'list', label:'What Direction?', icon:'compass', accent:'var(--amber)',
-   kick:'Reframe', title:'What Direction Are You Moving?',
-   lead:'Is strengthening belonging most dependent on changing classroom practice, adult culture — or both? What more do you need to know?',
-   subhead:'Options for Strengthening Belonging — 3 Big Buckets',
-   bullets:['Do more of what’s working.','Do less of what’s harmful.','Do something new or different.']},
-
- {type:'statement-slide', label:'Reframe the DQ', icon:'edit', accent:'var(--blue)',
-   kick:'Reframe Driving Question', title:'Reframe the Question',
-   statement:'How might we strengthen <span class="fill">[aspect of belonging]</span> by changing <span class="fill">[specific practice, culture, or both]</span> so that <span class="fill">[desired outcome]</span>?'},
-
- {type:'section', label:'Prototype a Solution', icon:'puzzle', accent:'var(--green)', title:'Prototype a Solution'},
-
- {type:'list', label:'Exhibition of Learning', icon:'present', accent:'var(--coral)',
-   kick:'Exhibition of Learning', title:'PBL Slice Prototype Pitch',
-   lead:'5–7 minutes per team.'},
-
- {type:'section', label:'Break', icon:'coffee', accent:'var(--amber)', title:'Break'},
-
- {type:'section', label:'Unpacking the Slice', icon:'eye', accent:'var(--teal)',
-   title:'Assessing &amp; Unpacking the PBL Slice', lead:'Peek behind the curtain.'},
-
- {type:'statement-slide', label:'Unpacking Our Slice', icon:'eye', accent:'var(--blue)',
-   kick:'Experiencing PBL as a Learner', title:'Unpacking Our PBL Slice',
-   statement:'How might we increase student belonging by changing classroom practice, adult culture, or both?'},
-
- {type:'figure', label:'Design Elements Checklist', accent:'var(--coral)',
-   kick:'Gold Standard PBL', title:'Essential Project Design Elements',
-   img:'s34_design_elements', cap:'PBLWorks · Essential Project Design Elements Checklist.'},
-
- {type:'protocol', label:'Pairs & Shares', icon:'users', accent:'var(--green)', timer:4,
-   kick:'Pairs & Shares', title:'Compare Your Checklists',
-   steps:['What stood out as an element clearly <b>present</b> in the PBL Slice?','What elements were <b>missing</b>? How could they have been incorporated?','Be ready to share with the whole group!']},
-
- {type:'figure', label:'Teaching Practices Checklist', accent:'var(--blue)',
-   kick:'Gold Standard PBL', title:'Essential PBL Teaching Practices',
-   img:'s36_teaching_practices', cap:'PBLWorks · Essential Project-Based Teaching Practices.'},
-
- {type:'protocol', label:'Pairs & Shares', icon:'users', accent:'var(--amber)', timer:4,
-   kick:'Pairs & Shares', title:'Compare Your Rubrics',
-   steps:['What stood out as clearly present or <b>done well</b> in the PBL Slice?','What was <b>missing</b> or could improve? How could it be done differently?','Be ready to share with the whole group!']},
-
- {type:'section', label:'Process + Mindset', icon:'brain', accent:'var(--teal)',
-   title:'Reminder: PBL = Process + Mindset'},
-
- {type:'list', label:'Inquiry Mindset', icon:'brain', accent:'var(--coral)',
-   kick:'Inquiry Mindset', title:'What Is an “Inquiry” Mindset?',
-   lead:'How might we embrace this mindset in the classroom with our students?',
-   video:{url:'https://www.youtube.com/watch?v=_KK958OkD6g', label:'Watch · What is an Inquiry Mindset?', source:'youtube.com'}},
-
- {type:'section', label:'Lunch', icon:'food', accent:'var(--amber)',
-   title:'Lunch Time', lead:'Return Time | 12:30 PM'},
-
- {type:'section', label:'Now It’s Your Turn!', icon:'rocket', accent:'var(--green)',
-   title:'Now It’s Your Turn!', lead:'Where do we want to be by the end of this week?'},
-
- {type:'list', label:'Our Vision', icon:'heart', accent:'var(--blue)',
-   kick:'Our Vision for Inquiry Studio', title:'Strengthening Belonging',
-   lead:'To strengthen student belonging by increasing guided autonomy in the classroom through:',
-   bullets:['Project-Based Learning','Work-Based Learning','Teacher Externships','Communities of Practice','Integrated Teacher Teams']},
-
- {type:'statement-slide', label:'Driving Question', icon:'q', accent:'var(--teal)',
-   kick:'Driving Question', title:'Our Inquiry Studio DQ',
-   statement:'How might we design a multidisciplinary, integrated PBL unit that fosters belonging (guided autonomy) & readiness?'},
-
- {type:'cards', label:'Clarifying Terms', icon:'book', accent:'var(--coral)',
-   kick:'Clarifying Terms', title:'Design a…', cols:'g3',
-   cards:[
-     {icon:'layers', h4:'Multidisciplinary', p:'Several content areas.'},
-     {icon:'link', h4:'Integrated', p:'Intentionally weaving content areas through a connective topic, concept, issue, problem, or experience.'},
-     {icon:'compass', h4:'PBL Unit', p:'A learning process where content & skills are learned through a project guided by inquiry.'}]},
-
- {type:'statement-slide', label:'What is Integration?', icon:'link', accent:'var(--blue)',
-   kick:'What is Integration?', title:'Integration',
-   statement:'Integrated = intentionally weaving content areas through a connective <span class="fill">topic, concept, issue, problem, or experience</span>.'},
-
- {type:'figure', label:'Integration · Example', accent:'var(--blue)',
-   kick:'What is Integration?', title:'Weaving Content Areas',
-   img:'s45_integration', cap:'An example of integrated content.'},
-
- {type:'statement-slide', label:'Swap Ingredients!', icon:'refresh', accent:'var(--amber)',
-   kick:'Swap Ingredients!', title:'Where’s Your Recipe?',
-   statement:'Right now we are mostly at <span class="fill">[current level]</span>. We want to move toward <span class="fill">[ideal level]</span>. The biggest thing missing is <span class="fill">[gap]</span> so that students can <span class="fill">[outcome]</span>.'},
-
- {type:'figure', label:'Doing Projects vs. PBL', accent:'var(--coral)',
-   kick:'Process + Mindset', title:'Doing Projects vs. Project-Based Learning',
-   img:'s47_cooking', cap:'New Tech Network.'},
-
- {type:'twolist', label:'Where to Start with Design?', icon:'compass', accent:'var(--green)',
-   kick:'Where to Start with Design?', title:'Two On-Ramps',
-   note:'Think about our slice: did you start with teacher needs, or student/teacher needs?',
-   cols:[
-     {icon:'heart', h4:'Student Needs — Authenticity', items:['Student interests','Real-world, relevant problems']},
-     {icon:'map', h4:'Teacher Needs — Curriculum Mapping', items:['Standards','Learning outcomes']}]},
-
- {type:'cards', label:'On-Ramps to the PBL Freeway', icon:'compass', accent:'var(--coral)',
-   kick:'On-Ramps to the PBL Freeway', title:'Two Ways In', cols:'g2',
-   cards:[
-     {icon:'heart', h4:'Authenticity in Project Design', p:'Jump in by identifying a real-world, relevant problem for students to solve.'},
-     {icon:'map', h4:'Curriculum Mapping', p:'Pause creativity, get strategic. What do you want students to know, understand, and be able to do?'}]},
-
- {type:'section', label:'Let’s Get Started!', icon:'rocket', accent:'var(--blue)', title:'Let’s Get Started!'},
-
- {type:'list', label:'Curriculum Mapping', icon:'map', accent:'var(--teal)',
-   kick:'Curriculum Mapping', title:'Designing Integrated Curriculum',
-   bullets:['Where do you see examples of empathy?','What needs are identified?'],
-   video:{url:'https://www.youtube.com/watch?v=9VzhStQwQSI', label:'Watch · Designing Integrated Curriculum', source:'youtube.com'}},
-
- {type:'figure', label:'Curriculum Map · Example', accent:'var(--teal)',
-   kick:'Curriculum Mapping', title:'A Sample Integrated Map',
-   img:'s53_curric_map', cap:'Content areas mapped across the year for points of integration.'},
-
- {type:'statement-slide', label:'Know & Do', icon:'target', accent:'var(--amber)',
-   kick:'Learning Outcomes', title:'Begin with the End',
-   statement:'What do you want your students to <span class="fill">(1) know & understand</span> and <span class="fill">(2) be able to do</span>?'},
-
- {type:'twolist', label:'What Do We Itemize?', icon:'list', accent:'var(--green)',
-   kick:'What Do We Itemize?', title:'Nouns & Verbs',
-   cols:[
-     {icon:'book', h4:'Knowledge, Concepts & Texts', items:['Look for the <b>nouns</b> in your standards.','Core ideas, topics, and understandings students need to know.']},
-     {icon:'target', h4:'Skills & Practices', items:['Look for the <b>verbs</b> in your standards.','Actions, processes, and dispositions students should demonstrate.']}]},
-
- {type:'figure', label:'Itemize · Example', accent:'var(--green)',
-   kick:'What Do We Itemize?', title:'Itemizing in Practice',
-   img:'s55_itemize', cap:'Pulling knowledge & skills out of the standards.'},
-
- {type:'cards', label:'How to Itemize?', icon:'edit', accent:'var(--blue)',
-   kick:'How to Itemize?', title:'Pick Your Tool', cols:'g3',
-   cards:[
-     {icon:'edit', h4:'Sticky Notes', p:''},{icon:'present', h4:'Device', p:''},{icon:'grid', h4:'White Board', p:''}],
-   links:[{label:'bit.ly/CAcontentstand', url:'https://bit.ly/CAcontentstand'}]},
+ {type:'protocol', label:'Get Energized!', icon:'spark', accent:'var(--green)', task:true,
+   kick:'Get Energized!', title:'Alphabet Soup!',
+   steps:['Someone shouts out the letter “A.”','As a group, progress through the alphabet at random — one letter at a time — without the same letter being shouted at once.','If the same letter is shouted simultaneously, start over at “A”!','See if you can get through the whole alphabet. Too easy? See how high you can count using numbers!']},
 
  {type:'list', label:'Breaking Down Content Walls', icon:'wall', accent:'var(--coral)',
    kick:'Empathize by Sharing', title:'Breaking Down Content Walls',
    lead:'Teach each other about your learning goals and outcomes — then look across them for the connections.'},
+
+ {type:'quote', label:'Quote · John Larmer', accent:'var(--coral)',
+   quote:'PBL means students are doing work that is real to them — it is authentic to their lives — or the work has a direct impact on or use in the real world.',
+   attr:'John Larmer · Making Project-Based Learning Authentic'},
+
+ {type:'list', label:'Externships Share-Out', icon:'building', accent:'var(--teal)',
+   kick:'Externships: Real Experience for Real Connection', title:'Share Out',
+   lead:'Each group shares their Group Summary from the externship reflection guide.',
+   bullets:['What did you see, what does it mean, and where could it live in your classroom?','As you listen: what concepts keep coming up across groups?']},
+
+ {type:'list', label:'Why Authenticity Matters', icon:'star', accent:'var(--blue)',
+   kick:'Making Learning Real: Authenticity', title:'Why Authenticity Matters',
+   bullets:['Engages students through real-world relevance.','Increases motivation and ownership of learning.','Develops transferable skills: problem-solving, collaboration, communication.'],
+   note:'<b>47%</b> of Sonoma County students: “I care more about what I’m learning when I feel like I’m solving a real-world problem.”'},
+
+ {type:'cards', label:'What Makes It Authentic?', icon:'star', accent:'var(--green)',
+   kick:'Making Learning Real', title:'What Makes a Project Authentic?', cols:'g2',
+   cards:[
+     {icon:'building', h4:'Authentic Content', p:'Connects to a real-world context or problem.'},
+     {icon:'users', h4:'Authentic Impact', p:'Genuine purpose & outcomes; a real audience or stakeholders.'},
+     {icon:'target', h4:'Authentic Tasks & Tools', p:'Methods & tools professionals actually use.'},
+     {icon:'heart', h4:'Personal Authenticity', p:'Student voice & choice; relevant to student lives.'}],
+   note:'Only <b>30%</b> of Sonoma County students say their classwork lets them solve real-world problems.'},
+
+ {type:'figure', label:'Authenticity Spectrum', accent:'var(--amber)',
+   kick:'The Authenticity Spectrum', title:'Spectrum of Authenticity',
+   img:'s63_spectrum',
+   bullets:['<b>Simulated</b> — classroom-based, no outside involvement.','<b>Semi-Authentic</b> — real-world inspired, limited external feedback.','<b>Fully Authentic</b> — real stakeholders, real problems, real-world impact.'],
+   links:[{label:'Authentic PBL · New Tech Network', url:'https://newtechnetwork.org/resources/authentic-pbl/'}]},
+
+ {type:'twolist', label:'Add Authenticity', icon:'star', accent:'var(--coral)',
+   kick:'Strategies to Add Authenticity', title:'Make It Matter More',
+   note:'Think: What would make your project matter more to your students?',
+   cols:[
+     {icon:'hand', h4:'Strategies', items:['Partner with local experts, businesses, or organizations.','Connect to current events or community issues.','Use tools, processes & formats professionals use.','Build feedback loops with adults outside school.','Have students present to real audiences.']},
+     {icon:'q', h4:'Where Can You Add It?', items:['Driving question?','Final product?','Intended audience?','Stakeholder involvement?','Student choice and agency?']}]},
+
+ {type:'section', label:'Break', icon:'coffee', accent:'var(--amber)', title:'Break'},
+
+ {type:'cards', label:'Brain Energizer!', icon:'spark', accent:'var(--green)',
+   kick:'Ignite Your Creativity', title:'Choose Your Brain Energizer!', cols:'g2',
+   cards:[
+     {icon:'users', h4:'Connection — Indoor', p:'Cards!'},
+     {icon:'tree', h4:'Connection — Outdoor', p:'Walk!'}],
+   note:'<b>Prompt:</b> What part of the project are you most excited about right now?'},
+
+ {type:'figure', label:'Looking for Links', accent:'var(--teal)',
+   kick:'Looking for Links', title:'Find the Connections',
+   img:'looking_for_links_banner',
+   statement:'We see a possible link between <span class="fill">[course]</span> and <span class="fill">[course]</span> through <span class="fill">[shared skill, concept, or idea]</span> because students could <span class="fill">[meaningful outcome]</span>.',
+   links:[{label:'Try the method · Integration by Design', url:'https://integration-by-design.netlify.app/methods/looking-for-links'}]},
+
+ {type:'protocol', label:'“Recipe” Ideas', icon:'msg', accent:'var(--blue)', timer:4,
+   kick:'“Recipe” Ideas', title:'Partner Protocol',
+   steps:['Decide who goes first (the person who last had pizza for dinner).','<b>3 min</b> — One partner shares link statements and thoughts prompted by the externship and team connections so far.','<b>1 min</b> — The other partner responds by verbalizing what they heard.','Swap roles when prompted.']},
+
+ {type:'figure', label:'Links · Sweet Spot', accent:'var(--teal)',
+   kick:'Looking for Links', title:'Finding the Sweet Spot',
+   img:'s70_links', cap:'Desirability · Feasibility · Viability → Innovation.'},
+
+ {type:'list', label:'Strong Driving Question', icon:'q', accent:'var(--coral)',
+   kick:'Creating a Strong Driving Question', title:'Characteristics of a DQ',
+   bullets:['<b>Provocative or challenging</b> — relevant, important, urgent, or otherwise interesting.','<b>Open-ended or complex</b> — no single right answer; requires inquiry & higher-order thinking.','<b>Linked to the core</b> of what you want students to learn.']},
+
+ {type:'statement-slide', label:'DQ Format', icon:'edit', accent:'var(--amber)',
+   kick:'Potential Driving Question Format', title:'A Format to Start',
+   statement:'How can we, as <span class="fill">[who]</span>, do <span class="fill">[action]</span> so that <span class="fill">[result]</span>?'},
+
+ {type:'list', label:'AI Co-Create · Before', icon:'brain', accent:'var(--green)', corner:['claude','chatgpt'],
+   kick:'Using AI to Co-Create Driving Questions', title:'Before You Jump In',
+   bullets:['What standards or disciplines do I want to integrate?','What real-world problems or issues might connect?','What do I want students to know and be able to do?','Who might the project impact or serve (authentic audience)?']},
+
+ {type:'cards', label:'AI Co-Create · Prompts', icon:'msg', accent:'var(--blue)', corner:['claude','chatgpt'],
+   kick:'Using AI to Co-Create Driving Questions', title:'Types of Prompts', cols:'g2',
+   cards:[
+     {icon:'edit', h4:'Refinement', p:'Reword an existing driving question.'},
+     {icon:'check', h4:'Alignment', p:'Does this align with Gold Standard PBL?'},
+     {icon:'bulb', h4:'Ideation', p:'Provide information and ask for starting ideas.'},
+     {icon:'msg', h4:'Collaboration', p:'Make it a conversation.'}]},
+
+ {type:'twolist', label:'Team Work Time', icon:'users', accent:'var(--coral)',
+   kick:'Team Work Time', title:'Create a Strong Driving Question',
+   lead:'Together as a team, create an initial driving question.',
+   cols:[
+     {icon:'q', h4:'For Consideration', items:['Have you identified common themes in your curriculum?','Have you decided on any authentic entry points?']},
+     {icon:'target', h4:'A Strong Driving Question Is…', items:['<b>Provocative or challenging</b> — because it is relevant, important, urgent, or otherwise interesting.','<b>Open-ended or complex</b> — no single right answer; requires in-depth inquiry and higher-level thinking.','<b>Linked to the core</b> of what you want students to learn — to answer it well, they gain the knowledge and skills targeted as project goals.']}]},
+
+ {type:'twolist', label:'DQ Critique Protocol', icon:'msg', accent:'var(--teal)', timer:8,
+   kick:'Driving Question Feedback', title:'Critique Protocol',
+   cols:[
+     {icon:'clock', h4:'The Rounds', items:['<b>2 min</b> — Share: DQ, intended outcomes/standards, brief unit description.','<b>2 min</b> — Clarifying questions.','<b>2 min</b> — Warm feedback (strengths).','<b>2 min</b> — Cool feedback (areas to reconsider).']},
+     {icon:'check', h4:'Considerations', items:['Is it open-ended (no single right answer)?','Does it provoke inquiry and critical thinking?','Is it linked to core standards or content?','Is it authentic and relevant to the real world?']}]},
+
+ {type:'section', label:'Lunch', icon:'food', accent:'var(--amber)',
+   title:'Lunch Time', lead:'Return Time | 12:30 PM'},
+
+ {type:'statement-slide', label:'Benchmark · Driving Question', accent:'var(--coral)',
+   kick:'Benchmark', title:'A Driving Question',
+   statement:'A driving question is a <span class="fill">challenging, real-world question</span> that sparks inquiry and guides students to explore, learn, and take action.'},
+
+ {type:'cards', label:'Sub-Driving Qs & Benchmarks', icon:'layers', accent:'var(--blue)',
+   kick:'Next Steps', title:'Sub-Driving Questions & Benchmarks', cols:'g2',
+   cards:[
+     {icon:'q', h4:'Sub-Driving Questions', p:'Help students dig deeper and break down the complexity of the driving question — articulating the learning needed within each content area.'},
+     {icon:'flag', h4:'Benchmarks (Milestones)', p:'Give students an opportunity to demonstrate learning while moving them closer to answering the driving question.'}]},
+
+ {type:'section', label:'Through the Student Lens', icon:'eye', accent:'var(--green)',
+   title:'Viewing Your Driving Question Through the Student Lens'},
+
+ {type:'list', label:'Need-to-Knows · Braindump', icon:'q', accent:'var(--blue)', task:true,
+   kick:'Need-to-Knows', title:'Braindump Your Need-to-Knows',
+   lead:'Sometimes best framed as questions. Individually, braindump what you need to know.',
+   bullets:['Write down as many questions as you can.','Do not stop to discuss, judge, or answer the questions.','Write down every question exactly as it is in your head.','Change any statement into a question.'],
+   buckets:[{label:'Breaks and Bridges', c:'var(--coral)'},{label:'Classroom Practice', c:'var(--blue)'},{label:'Adult Culture', c:'var(--teal)'}]},
+
+ {type:'twolist', label:'Need-to-Knows · Sort', icon:'msg', accent:'var(--teal)', task:true,
+   kick:'Need-to-Knows', title:'Improve, Categorize, Share & Prioritize',
+   cols:[
+     {icon:'edit', h4:'Individually — Improve & Categorize', items:['Do your questions ask for a variety of information?','Sort into <b>[C]</b> Closed-ended — answered with yes, no, or one word.','And <b>[O]</b> Open-ended — require an explanation.']},
+     {icon:'users', h4:'Collaboratively — Share & Prioritize', items:['Read your questions to your team (avoid comments or clarifying questions).','Discuss and prioritize which questions help solve the driving question the most.']}]},
+
+ {type:'figure', label:'Curriculum & Performance Mapping', accent:'var(--coral)',
+   kick:'Sub-Driving Questions & Benchmarks', title:'Curriculum & Performance Mapping',
+   img:'d4_curric_map', cap:'Overarching theme → essential questions → sub-questions → culminating project & performance tasks.'},
+
+ {type:'hierarchy', label:'Sub-Driving Question Template', accent:'var(--green)',
+   kick:'Sub-Driving Questions & Benchmarks', title:'Essential & Sub-Driving Questions',
+   top:'Essential Question', mids:['Key Question','Key Question','Key Question'],
+   subs:['Sub-question','Sub-question','Sub-question','Sub-question','Sub-question','Sub-question']},
+
+ {type:'list', label:'Sub-Driving Q Template', icon:'edit', accent:'var(--blue)',
+   kick:'Tools', title:'Template for Sub-Driving & Essential Questions',
+   lead:'Use the shared template to develop your sub-driving and essential questions.',
+   links:[{label:'Open the Template Folder', url:'https://drive.google.com/drive/folders/14O3pQ3oeipYTnmh3dBD1IZ4EdwGJzi6X?usp=drive_link'}]},
+
+ {type:'list', label:'Final Product or Assessment', icon:'target', accent:'var(--amber)',
+   kick:'Project Design', title:'Determining the Final Product or Assessment',
+   lead:'Using the PBL Planner Guide.'},
 
  {type:'closing', label:'Daily Feedback', icon:'msg', accent:'var(--amber)',
    kick:'Daily Feedback', title:'Breakfast of Champions',
@@ -833,6 +746,7 @@ function buildInner(s){
     h+='<ul class="checklist r">'+s.checklist.map(c=>'<li><span class="box">'+ic('check')+'</span>'+c+'</li>').join('')+'</ul>';
     h+=noteHtml(s);
     if(s.chips) h+='<div class="chips r">'+s.chips.map(c=>'<span class="chip"><span class="d"></span>'+c+'</span>').join('')+'</div>';
+    if(s.wordle) h+='<div class="wordle r">'+s.wordle.map(w=>'<span style="font-size:'+w.size+';transform:rotate('+w.rot+'deg);background:'+w.g+';-webkit-background-clip:text;background-clip:text;color:transparent">'+w.t+'</span>').join('')+'</div>';
     return h+'</div>';
   }
   if(s.type==='list'){
@@ -842,8 +756,17 @@ function buildInner(s){
     if(s.subhead) h+='<p class="tagline r">'+s.subhead+'</p>';
     if(s.bullets) h+='<ul class="clean r">'+s.bullets.map(b=>'<li>'+b+'</li>').join('')+'</ul>';
     h+=stmtHtml(s)+noteHtml(s)+linkRow(s.links);
+    if(s.buckets) h+='<div class="buckets r">'+s.buckets.map(b=>'<div class="bucket" style="--bc:'+b.c+'"><span class="blab">'+b.label+'</span><span class="bq">?</span></div>').join('')+'</div>';
     if(s.video) h+=videoCard(s.video);
     if(s.timer) h+=timerHtml(s);
+    return h+'</div>';
+  }
+  if(s.type==='hierarchy'){
+    h='<div class="inner" style="--accent-c:'+acc+'">'+kickHtml(s)+head2(s)+leadHtml(s)+'<div class="htree r">';
+    h+='<div class="row top"><div class="hbox">'+s.top+'</div></div>';
+    h+='<div class="row mids">'+s.mids.map(m=>'<div class="hbox">'+m+'</div>').join('')+'</div>';
+    h+='<div class="row subs">'+s.subs.map(x=>'<div class="hbox">'+x+'</div>').join('')+'</div>';
+    h+='</div>'+noteHtml(s);
     return h+'</div>';
   }
   if(s.type==='video'){
@@ -929,7 +852,7 @@ function buildInner(s){
   const progress=document.getElementById('progress');
   const cnum=document.getElementById('cnum');
   document.getElementById('ctot').textContent=slides.length;
-  document.getElementById('agendaCount').textContent=slides.length+' slides · Day 3 Session';
+  document.getElementById('agendaCount').textContent=slides.length+' slides · Day 4 Session';
   let cur=0;
 
   const agenda=document.getElementById('agenda');

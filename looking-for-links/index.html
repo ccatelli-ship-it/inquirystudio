@@ -87,6 +87,23 @@ a{color:inherit}
 .callout ul{margin:10px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:var(--fg)}
 .note{margin-top:30px;font-family:var(--font-m);font-size:12px;color:var(--muted)}
 
+/* Handoff to Designing Driving Questions */
+.handoff{margin-top:34px;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.handoff .hh{background:rgba(19,138,126,.08);border-bottom:1px solid var(--line);padding:16px 20px}
+.handoff .hh .hlabel{font-family:var(--font-m);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-d)}
+.handoff .hh p{margin:6px 0 0;font-size:14.5px;line-height:1.55;color:var(--fg)}
+.handoff .mrow{display:grid;grid-template-columns:1fr 22px 1fr;gap:14px;align-items:center;padding:15px 20px;border-bottom:1px solid var(--line)}
+.handoff .mrow:last-of-type{border-bottom:none}
+.handoff .mrow .f{font-size:14px;line-height:1.5;color:var(--fg)}
+.handoff .mrow .f b{color:var(--accent-d)}
+.handoff .mrow .ar{font-family:var(--font-m);font-weight:600;color:var(--accent);text-align:center}
+.handoff .mrow .t{font-size:14px;line-height:1.5;color:var(--fg)}
+.handoff .mrow .t .tg{display:block;font-family:var(--font-m);font-weight:600;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:3px}
+.handoff .foot{padding:14px 20px;font-size:14px;line-height:1.55;color:var(--fg)}
+.handoff .foot a{color:var(--accent-d);font-weight:700;text-decoration:none}
+.handoff .foot a:hover{text-decoration:underline}
+@media (max-width:620px){.handoff .mrow{grid-template-columns:1fr;gap:6px}.handoff .mrow .ar{text-align:left;transform:rotate(90deg);width:22px}}
+
 footer{border-top:1px solid var(--line);padding:24px 0 40px;text-align:center;font-family:var(--font-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 
 @media (max-width:760px){
@@ -134,9 +151,10 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;text-align:center;fo
     <div class="grp"><div class="lbl">Use When</div><div class="val">After teams have completed Curriculum Mapping for Integration</div></div>
     <div class="grp"><div class="lbl">COSI Fit</div><div class="val">Overlapping, Shared, or Immersed teams</div></div>
     <div class="grp"><div class="lbl">Output</div><div class="val">A link bank of possible shared skills, concepts, questions, problems, products, or pathway threads</div></div>
+    <div class="grp"><div class="lbl">Leads Into</div><div class="val"><a href="../driving-questions/" style="color:var(--accent-d);font-weight:600;text-decoration:none">Designing Driving Questions</a></div></div>
     <div class="grp"><div class="lbl">The Arc</div>
       <div class="phase">
-        <span class="ph">Scan</span><span class="ph">Link</span><span class="ph">Choose</span>
+        <span class="ph">Scan</span><span class="ph">Link</span><span class="ph">Choose</span><span class="ph">Carry</span>
       </div>
     </div>
   </aside>
@@ -181,12 +199,36 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;text-align:center;fo
     <div class="step"><div class="num">05</div><div class="txt"><p><span class="cond">If Shared or Immersed</span><br><b>Add real-world possibilities.</b> Create a second list titled Real-World Problems, Challenges, or Products. Look for inspiration in your community, current events, real workplace needs, externship experiences, philosophical questions, historical events, natural phenomena, controversial issues, or opportunities to design, plan, produce, or create something.</p></div></div>
     <div class="step"><div class="num">06</div><div class="txt"><p><b>Build possible links.</b> Use the course matrix and the new lists to create possible link statements through three lenses: <b>Link</b> — two courses clearly connect around the same skill, idea, or task; <b>Mirror</b> — two courses explore parallel processes, tensions, or problems; <b>Empathize</b> — student interests or real-world needs reveal a meaningful reason to connect the learning.</p></div></div>
     <div class="step"><div class="num">07</div><div class="txt"><p><b>Ask clarifying questions before choosing.</b> Do one round of clarifying questions. Each teacher explains the links they see; teammates ask: "What would students need to understand first?" "Where does this already show up in your course?" "What would make this meaningful for students?" "What might be hard to coordinate?"</p></div></div>
-    <div class="step"><div class="num">08</div><div class="txt"><p><b>Select 2–3 promising links.</b> Choose two or three links worth exploring in a future design activity — without fully designing them yet. Prioritize links that are authentic, useful for student learning, connected to more than one course, and possible within the team's current capacity.</p></div></div>
-    <div class="step"><div class="num">09</div><div class="txt"><p><b>Name the links worth chasing.</b> For each link you chose, capture it as a single clear statement using the frame below. Then read them aloud as a team. These aren't commitments — they're the sparks. Post them where everyone can see them, and you'll walk out of the room knowing exactly where your next design conversation begins.</p></div></div>
+    <div class="step"><div class="num">08</div><div class="txt"><p><b>Select 2–3 promising links.</b> Choose two or three links worth carrying into the <b>Designing Driving Questions</b> activity — without fully designing them yet. Prioritize links that are authentic, useful for student learning, connected to more than one course, and possible within the team's current capacity.</p></div></div>
+    <div class="step"><div class="num">09</div><div class="txt"><p><b>Name the links worth chasing.</b> For each link you chose, capture it as a single clear statement using the frame below. Then read them aloud as a team. These aren't commitments — they're the sparks. Post them where everyone can see them: in the next activity, each statement becomes the starting material for a driving question.</p></div></div>
 
     <h2 class="frame-h">Link Statement Frame</h2>
     <div class="frame"><b>We see a possible link between</b> <span class="blank">[course]</span> <b>and</b> <span class="blank">[course]</span> <b>through</b> <span class="blank">[shared skill, concept, or idea]</span> <b>because students could</b> <span class="blank">[meaningful outcome]</span>.
       <p class="ex">e.g., We see a possible link between Biology and Patient Care through vital signs because students could use data to make decisions about health and wellness.</p>
+    </div>
+
+    <h2 class="frame-h">Carry Your Links Forward</h2>
+    <div class="handoff">
+      <div class="hh">
+        <span class="hlabel">Next Activity → Designing Driving Questions</span>
+        <p>Don't let these statements go cold. Each part of a link statement is already a different ingredient of a driving question. When your team moves to the next activity, you'll pull each statement apart like this:</p>
+      </div>
+      <div class="mrow">
+        <div class="f"><b>between [course] and [course]</b><br>Biology + Patient Care</div>
+        <div class="ar">→</div>
+        <div class="t"><span class="tg">The disciplines your question spans</span>Which content areas, standards, and teachers it must honor.</div>
+      </div>
+      <div class="mrow">
+        <div class="f"><b>through [shared skill, concept, or idea]</b><br>vital signs</div>
+        <div class="ar">→</div>
+        <div class="t"><span class="tg">Your essential learning · what makes it viable</span>What answering the question must require students to learn.</div>
+      </div>
+      <div class="mrow">
+        <div class="f"><b>because students could [meaningful outcome]</b><br>use data to make decisions about health and wellness</div>
+        <div class="ar">→</div>
+        <div class="t"><span class="tg">Your authentic spark · what makes it desirable</span>The real-world reason and purpose that makes students care.</div>
+      </div>
+      <div class="foot">Bring your 2–3 link statements — plus your student-interest and real-world lists — straight into <a href="../driving-questions/">Designing Driving Questions</a>. Carry your COSI target with you; it sets how ambitious the question should be.</div>
     </div>
 
     <div class="callout">
@@ -196,7 +238,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;text-align:center;fo
         <li>For Overlapping teams: a list of shared skills, concepts, tools, or language</li>
         <li>For Shared or Immersed teams: student interest and real-world possibility lists</li>
         <li>A set of possible links generated through the Link / Mirror / Empathize lenses</li>
-        <li>Two or three link statements to revisit during the next design activity</li>
+        <li>Two or three link statements — the starting material for Designing Driving Questions</li>
       </ul>
     </div>
 
