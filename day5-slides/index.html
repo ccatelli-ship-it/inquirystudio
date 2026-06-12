@@ -411,6 +411,19 @@ svg.icon{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;strok
 .ag-item.is-current .ag-l{color:#fff}
 .ag-i{font-family:var(--font-m);font-size:12px;color:var(--teal);width:24px;flex:none}
 .ag-l{font-size:15px;color:var(--muted);line-height:1.3}
+/* flow progression */
+.flowrow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(8px,1.2vw,16px);margin-top:clamp(16px,2.6vh,30px)}
+.flowstep{display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(14px,1.8vw,22px) clamp(12px,1.6vw,22px);border-radius:16px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(8px);font-family:var(--font-b);font-weight:700;font-size:clamp(16px,1.9vw,24px);color:#fff;min-width:clamp(108px,12vw,168px);min-height:clamp(68px,8vh,92px);box-shadow:inset 0 0 0 2px color-mix(in oklab,var(--accent-c,var(--teal)) 24%,transparent)}
+.flowarrow{flex:none;display:inline-flex;color:var(--orange)}
+.flowarrow svg{width:clamp(24px,2.8vw,42px);height:clamp(24px,2.8vw,42px)}
+@media(max-width:860px){.flowrow{flex-direction:column}.flowarrow{transform:rotate(90deg)}.flowstep{width:100%}}
+.keepmind{margin-top:clamp(16px,2.6vh,28px);padding:clamp(16px,2vw,26px);border-radius:18px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(8px)}
+.keepmind .km-h{display:flex;align-items:center;gap:12px;margin:0 0 10px}
+.keepmind .km-h .ic{width:clamp(26px,3vw,36px);height:clamp(26px,3vw,36px);color:var(--accent-c,var(--teal));flex:none}
+.keepmind .km-h h4{margin:0;font-size:clamp(18px,2.2vw,26px);color:#fff}
+.keepmind ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.keepmind li{position:relative;padding-left:26px;font-size:clamp(16px,1.9vw,22px);line-height:1.4;color:var(--muted)}
+.keepmind li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--accent-c,var(--teal))}
 </style>
 </head>
 <body>
@@ -517,9 +530,6 @@ const SLIDES=[
      {icon:'clock', h4:'The Rounds', items:['<b>2 min</b> — Share: DQ, intended outcomes/standards, brief unit description.','<b>2 min</b> — Clarifying questions.','<b>2 min</b> — Warm feedback (strengths).','<b>2 min</b> — Cool feedback (areas to reconsider).']},
      {icon:'check', h4:'Considerations', items:['Is it open-ended (no single right answer)?','Does it provoke inquiry and critical thinking?','Is it linked to core standards or content?','Is it authentic and relevant to the real world?']}]},
 
- {type:'section', label:'Lunch', icon:'food', accent:'var(--amber)',
-   title:'Lunch Time', lead:'Return Time | 12:30 PM'},
-
  {type:'statement-slide', label:'Benchmark · Driving Question', accent:'var(--coral)',
    kick:'Benchmark', title:'A Driving Question',
    statement:'A driving question is a <span class="fill">challenging, real-world question</span> that sparks inquiry and guides students to explore, learn, and take action.'},
@@ -574,33 +584,29 @@ const SLIDES=[
      {icon:'check', h4:'3 · For Skills', p:'What skills are students practicing?'},
      {icon:'q', h4:'4 · For Content', p:'What knowledge and concepts are students developing?'}]},
 
- {type:'twolist', label:'Benchmarks · Products', icon:'target', accent:'var(--coral)',
+ {type:'flow', label:'Benchmarks · Products', accent:'var(--coral)',
    kick:'Types of Benchmarks', title:'Benchmarks for Products',
    lead:'From the final product, identify the smaller pieces students build along the way.',
-   cols:[
-     {icon:'flag', h4:'Backwards Build', items:['Final Product','Finishing','Framing','Foundation']},
-     {icon:'check', h4:'Keep in Mind', items:['Backwards planning.','Essential elements or components that lead to the final product.','Clear criteria + feedback before students move forward.']}]},
+   steps:['Final Product','Finishing','Framing','Foundation'],
+   aside:{icon:'check', h4:'Keep in Mind', items:['Backwards planning.','Essential elements or components that lead to the final product.','Clear criteria + feedback before students move forward.']}},
 
- {type:'twolist', label:'Benchmarks · Process', icon:'spark', accent:'var(--amber)',
+ {type:'flow', label:'Benchmarks · Process', accent:'var(--amber)',
    kick:'Types of Benchmarks', title:'Benchmarks for Process',
    lead:'Help teachers assess how students are thinking, collaborating, deciding, and revising — not just what they have finished.',
-   cols:[
-     {icon:'spark', h4:'Creative Process Phases', items:['Inspiration Phase','Ideation Phase','Implementation Phase','Unknown Final Product']},
-     {icon:'check', h4:'Keep in Mind', items:['No predetermined final product.','Use a creative process (e.g., Design Thinking) as benchmarks.','Flexibility in how each benchmark is met.']}]},
+   steps:['Inspiration Phase','Ideation Phase','Implementation Phase','Unknown Final Product'],
+   aside:{icon:'check', h4:'Keep in Mind', items:['No predetermined final product.','Utilize a creative process (e.g., Design Thinking) as benchmarks.','Flexibility in how each benchmark is met.']}},
 
- {type:'twolist', label:'Benchmarks · Skills', icon:'msg', accent:'var(--blue)',
+ {type:'flow', label:'Benchmarks · Skills', accent:'var(--blue)',
    kick:'Types of Benchmarks', title:'Benchmarks for Skills',
-   lead:'Example skill — Communication — broken into key domains.',
-   cols:[
-     {icon:'msg', h4:'Communication, by Domain', items:['Eye Contact','Voice Inflection','Audience Awareness']},
-     {icon:'check', h4:'Keep in Mind', items:['What skill(s) do you want students to demonstrate?','Break skills down into key domains.','Get clear on how students show the skill in different modalities.']}]},
+   lead:'Example skill — Communication — broken down into key domains.',
+   steps:['Communication','Eye Contact','Voice Inflection','Audience Awareness'],
+   aside:{icon:'check', h4:'Keep in Mind', items:['What skill(s) do you want students to demonstrate?','Break skills down into key domains.','Get clear on how students show the skill in different modalities.']}},
 
- {type:'twolist', label:'Benchmarks · Content', icon:'layers', accent:'var(--green)',
+ {type:'flow', label:'Benchmarks · Content', accent:'var(--green)',
    kick:'Types of Benchmarks', title:'Benchmarks for Content',
    lead:'Break the knowledge and concepts into demonstrable parts.',
-   cols:[
-     {icon:'layers', h4:'Content, by Domain', items:['Key Concept','Key Data or Evidence','Key Vocabulary','Key Application']},
-     {icon:'check', h4:'Keep in Mind', items:['What do you want students to know and understand?','Break down the knowledge and concepts.','Get clear on how students show understanding in different modalities.']}]},
+   steps:['Key Concept','Key Data or Evidence','Key Vocabulary','Key Application'],
+   aside:{icon:'check', h4:'Keep in Mind', items:['What do you want students to know and understand?','Break down the knowledge and concepts.','Get clear on how students show understanding in different modalities.']}},
 
  {type:'list', label:'Key Questions', icon:'q', accent:'var(--teal)',
    kick:'PBL Benchmarks', title:'Key Questions',
@@ -738,6 +744,14 @@ function buildInner(s){
     h='<div class="inner" style="--accent-c:'+acc+'">'+kickHtml(s)+headT(s)+leadHtml(s);
     h+='<div class="grid '+(s.cols||'g3')+' r">'+s.cards.map(c=>'<div class="mini'+(c.hot?' hot':'')+(c.muted?' muted':'')+'"'+(c.c?' style="--accent-c:'+c.c+'"':'')+'>'+ic(c.icon,'ic')+'<h4>'+c.h4+'</h4>'+(c.p?'<p>'+c.p+'</p>':'')+'</div>').join('')+'</div>';
     h+=noteHtml(s)+linkRow(s.links);
+    return h+'</div>';
+  }
+  if(s.type==='flow'){
+    const fa='<span class="flowarrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+    h='<div class="inner" style="--accent-c:'+acc+'">'+kickHtml(s)+head2(s)+leadHtml(s);
+    h+='<div class="flowrow r">'+s.steps.map((st,i)=>(i?fa:'')+'<span class="flowstep">'+st+'</span>').join('')+'</div>';
+    if(s.aside) h+='<div class="keepmind r"><div class="km-h">'+ic(s.aside.icon||'check','ic')+'<h4>'+s.aside.h4+'</h4></div><ul>'+s.aside.items.map(i=>'<li>'+i+'</li>').join('')+'</ul></div>';
+    h+=noteHtml(s);
     return h+'</div>';
   }
   if(s.type==='twolist'){
