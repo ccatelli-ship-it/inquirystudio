@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Inquiry Studio · Day 4 Session</title>
+<title>Inquiry Studio · Day 5 Session</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -494,115 +494,117 @@ const ACCENTS=['var(--teal)','var(--blue)','var(--coral)','var(--green)','var(--
 
 /* ===== SLIDES ===== */
 const SLIDES=[
- {type:'title', label:'Welcome · Day 4',
+ {type:'title', label:'Welcome · Day 5',
    brand:'Inquiry Studio', sub:'Summer Session', meta:'June 8 – June 12, 2026',
-   day:'Day 4', focus:'Driving Questions &middot; Need-to-Knows &middot; Project Design'},
+   day:'Day 5', focus:'Driving Questions &middot; Benchmarks &middot; Exhibition of Learning'},
 
- {type:'welcome', label:'Good Morning!', icon:'coffee', accent:'var(--amber)',
-   kick:'By 8:40 AM, please…', title:'Good Morning!',
-   checklist:['Sign in','Get comfortable','Find a seat'],
-   wordle:[
-     {t:'Teamwork', size:'clamp(34px,6vw,84px)', rot:-3, g:'linear-gradient(180deg,#fff,#1f8fd6)'},
-     {t:'Creativity', size:'clamp(30px,5.2vw,68px)', rot:-5, g:'linear-gradient(180deg,#ffd66b,#ffb43d)'},
-     {t:'Relationships', size:'clamp(28px,4.8vw,62px)', rot:4, g:'linear-gradient(180deg,#ff9d78,#ff7a4d)'},
-     {t:'Real-World', size:'clamp(26px,4.4vw,56px)', rot:5, g:'linear-gradient(180deg,#2ee0cf,#137c78)'},
-     {t:'Student-Centered', size:'clamp(24px,4.2vw,54px)', rot:-4, g:'linear-gradient(180deg,#8fd97f,#5fae51)'},
-     {t:'Safety', size:'clamp(24px,4vw,52px)', rot:6, g:'linear-gradient(180deg,#7ec8ff,#1f8fd6)'},
-     {t:'OYS', size:'clamp(22px,3.6vw,48px)', rot:-7, g:'linear-gradient(180deg,#8fd97f,#5fae51)'}]},
-
- {type:'protocol', label:'Get Energized!', icon:'spark', accent:'var(--green)', task:true,
-   kick:'Get Energized!', title:'Alphabet Soup!',
-   steps:['Someone shouts out the letter “A.”','As a group, progress through the alphabet at random — one letter at a time — without the same letter being shouted at once.','If the same letter is shouted simultaneously, start over at “A”!','See if you can get through the whole alphabet. Too easy? See how high you can count using numbers!']},
-
- {type:'list', label:'Breaking Down Content Walls', icon:'wall', accent:'var(--coral)',
-   kick:'Empathize by Sharing', title:'Breaking Down Content Walls',
-   lead:'Teach each other about your learning goals and outcomes — then look across them for the connections.'},
-
- {type:'quote', label:'Quote · John Larmer', accent:'var(--coral)',
-   quote:'PBL means students are doing work that is real to them — it is authentic to their lives — or the work has a direct impact on or use in the real world.',
-   attr:'John Larmer · Making Project-Based Learning Authentic'},
-
- {type:'list', label:'Externships Share-Out', icon:'building', accent:'var(--teal)',
-   kick:'Externships: Real Experience for Real Connection', title:'Share Out',
-   lead:'Each group shares their Group Summary from the externship reflection guide.',
-   bullets:['What did you see, what does it mean, and where could it live in your classroom?','As you listen: what concepts keep coming up across groups?']},
-
- {type:'list', label:'Why Authenticity Matters', icon:'star', accent:'var(--blue)',
-   kick:'Making Learning Real: Authenticity', title:'Why Authenticity Matters',
-   bullets:['Engages students through real-world relevance.','Increases motivation and ownership of learning.','Develops transferable skills: problem-solving, collaboration, communication.'],
-   note:'<b>47%</b> of Sonoma County students: “I care more about what I’m learning when I feel like I’m solving a real-world problem.”'},
-
- {type:'cards', label:'What Makes It Authentic?', icon:'star', accent:'var(--green)',
-   kick:'Making Learning Real', title:'What Makes a Project Authentic?', cols:'g2',
+ {type:'cards', label:'Be Decisive', icon:'spark', accent:'var(--green)',
+   kick:'Welcome & Motivational Regroup', title:'Be Decisive', cols:'g3',
    cards:[
-     {icon:'building', h4:'Authentic Content', p:'Connects to a real-world context or problem.'},
-     {icon:'users', h4:'Authentic Impact', p:'Genuine purpose & outcomes; a real audience or stakeholders.'},
-     {icon:'target', h4:'Authentic Tasks & Tools', p:'Methods & tools professionals actually use.'},
-     {icon:'heart', h4:'Personal Authenticity', p:'Student voice & choice; relevant to student lives.'}],
-   note:'Only <b>30%</b> of Sonoma County students say their classwork lets them solve real-world problems.'},
+     {icon:'target', h4:'Close-Focus Zoom', p:'Think about and write down the top five priorities for the project. Discuss and agree which of these you could focus on exclusively and still make the project a success'},
+     {icon:'edit', h4:'Define Your Terms', p:'Try to define in one sentence what’s really at stake in this project. Write it down somewhere in large lettering and keep it visible for the duration of the project or meeting.'},
+     {icon:'spark', h4:'Keep It Simple', p:'Writing an entire story in as few words as possible has challenged writers for decades, most famously in the six-word story. “For sale: baby shoes, never worn.” Can you simplify your project into six words or fewer?'}]},
 
- {type:'figure', label:'Authenticity Spectrum', accent:'var(--amber)',
-   kick:'The Authenticity Spectrum', title:'Spectrum of Authenticity',
-   img:'s63_spectrum',
-   bullets:['<b>Simulated</b> — classroom-based, no outside involvement.','<b>Semi-Authentic</b> — real-world inspired, limited external feedback.','<b>Fully Authentic</b> — real stakeholders, real problems, real-world impact.'],
-   links:[{label:'Authentic PBL · New Tech Network', url:'https://newtechnetwork.org/resources/authentic-pbl/'}]},
+ {type:'list', label:'Designing Driving Questions', icon:'q', accent:'var(--coral)',
+   kick:'Method · Design Methods', title:'Designing Driving Questions',
+   lead:'Turn your strongest links into one question that can drive a project.',
+   bullets:['Starting at Step #3 — draft only 2–3 driving questions.'],
+   links:[{label:'Open the Driving Questions method', url:'https://inquiry-studio-26.netlify.app/driving-questions/'}]},
 
- {type:'twolist', label:'Add Authenticity', icon:'star', accent:'var(--coral)',
-   kick:'Strategies to Add Authenticity', title:'Make It Matter More',
-   note:'Think: What would make your project matter more to your students?',
+ {type:'twolist', label:'DQ Critique Protocol', icon:'msg', accent:'var(--teal)', timer:8,
+   kick:'Driving Question Feedback', title:'Critique Protocol',
    cols:[
-     {icon:'hand', h4:'Strategies', items:['Partner with local experts, businesses, or organizations.','Connect to current events or community issues.','Use tools, processes & formats professionals use.','Build feedback loops with adults outside school.','Have students present to real audiences.']},
-     {icon:'q', h4:'Where Can You Add It?', items:['Driving question?','Final product?','Intended audience?','Stakeholder involvement?','Student choice and agency?']}]},
+     {icon:'clock', h4:'The Rounds', items:['<b>2 min</b> — Share: DQ, intended outcomes/standards, brief unit description.','<b>2 min</b> — Clarifying questions.','<b>2 min</b> — Warm feedback (strengths).','<b>2 min</b> — Cool feedback (areas to reconsider).']},
+     {icon:'check', h4:'Considerations', items:['Is it open-ended (no single right answer)?','Does it provoke inquiry and critical thinking?','Is it linked to core standards or content?','Is it authentic and relevant to the real world?']}]},
 
- {type:'section', label:'Break', icon:'coffee', accent:'var(--amber)', title:'Break'},
+ {type:'section', label:'Lunch', icon:'food', accent:'var(--amber)',
+   title:'Lunch Time', lead:'Return Time | 12:30 PM'},
 
- {type:'cards', label:'Brain Energizer!', icon:'spark', accent:'var(--green)',
-   kick:'Ignite Your Creativity', title:'Choose Your Brain Energizer!', cols:'g2',
+ {type:'statement-slide', label:'Benchmark · Driving Question', accent:'var(--coral)',
+   kick:'Benchmark', title:'A Driving Question',
+   statement:'A driving question is a <span class="fill">challenging, real-world question</span> that sparks inquiry and guides students to explore, learn, and take action.'},
+
+ {type:'cards', label:'Sub-Driving Qs & Benchmarks', icon:'layers', accent:'var(--blue)',
+   kick:'Next Steps', title:'Sub-Driving Questions & Benchmarks', cols:'g2',
    cards:[
-     {icon:'users', h4:'Connection — Indoor', p:'Cards!'},
-     {icon:'tree', h4:'Connection — Outdoor', p:'Walk!'}],
-   note:'<b>Prompt:</b> What part of the project are you most excited about right now?'},
+     {icon:'q', h4:'Sub-Driving Questions', p:'Help students dig deeper and break down the complexity of the driving question — articulating the learning needed within each content area.'},
+     {icon:'flag', h4:'Benchmarks (Milestones)', p:'Give students an opportunity to demonstrate learning while moving them closer to answering the driving question.'}]},
 
- {type:'figure', label:'Looking for Links', accent:'var(--teal)',
-   kick:'Looking for Links', title:'Find the Connections',
-   img:'looking_for_links_banner',
-   statement:'We see a possible link between <span class="fill">[course]</span> and <span class="fill">[course]</span> through <span class="fill">[shared skill, concept, or idea]</span> because students could <span class="fill">[meaningful outcome]</span>.',
-   links:[{label:'Open the Looking for Links method', url:'https://inquiry-studio-26.netlify.app/looking-for-links/'}]},
+ {type:'section', label:'Through the Student Lens', icon:'eye', accent:'var(--green)',
+   title:'Viewing Your Driving Question Through the Student Lens'},
 
- {type:'protocol', label:'“Recipe” Ideas', icon:'msg', accent:'var(--blue)', timer:4,
-   kick:'“Recipe” Ideas', title:'Partner Protocol',
-   steps:['Decide who goes first (the person who last had pizza for dinner).','<b>3 min</b> — One partner shares link statements and thoughts prompted by the externship and team connections so far.','<b>1 min</b> — The other partner responds by verbalizing what they heard.','Swap roles when prompted.']},
+ {type:'list', label:'Need-to-Knows · Braindump', icon:'q', accent:'var(--blue)', task:true,
+   kick:'Need-to-Knows', title:'Braindump Your Need-to-Knows',
+   lead:'Sometimes best framed as questions. Individually, braindump what you need to know.',
+   bullets:['Write down as many questions as you can.','Do not stop to discuss, judge, or answer the questions.','Write down every question exactly as it is in your head.','Change any statement into a question.'],
+   buckets:[{label:'Breaks and Bridges', c:'var(--coral)'},{label:'Classroom Practice', c:'var(--blue)'},{label:'Adult Culture', c:'var(--teal)'}]},
 
- {type:'figure', label:'Links · Sweet Spot', accent:'var(--teal)',
-   kick:'Looking for Links', title:'Finding the Sweet Spot',
-   img:'s70_links', cap:'Desirability · Feasibility · Viability → Innovation.'},
-
- {type:'list', label:'Strong Driving Question', icon:'q', accent:'var(--coral)',
-   kick:'Creating a Strong Driving Question', title:'Characteristics of a DQ',
-   bullets:['<b>Provocative or challenging</b> — relevant, important, urgent, or otherwise interesting.','<b>Open-ended or complex</b> — no single right answer; requires inquiry & higher-order thinking.','<b>Linked to the core</b> of what you want students to learn.']},
-
- {type:'statement-slide', label:'DQ Format', icon:'edit', accent:'var(--amber)',
-   kick:'Potential Driving Question Format', title:'A Format to Start',
-   statement:'How can we, as <span class="fill">[who]</span>, do <span class="fill">[action]</span> so that <span class="fill">[result]</span>?'},
-
- {type:'list', label:'AI Co-Create · Before', icon:'brain', accent:'var(--green)', corner:['claude','chatgpt'],
-   kick:'Using AI to Co-Create Driving Questions', title:'Before You Jump In',
-   bullets:['What standards or disciplines do I want to integrate?','What real-world problems or issues might connect?','What do I want students to know and be able to do?','Who might the project impact or serve (authentic audience)?']},
-
- {type:'cards', label:'AI Co-Create · Prompts', icon:'msg', accent:'var(--blue)', corner:['claude','chatgpt'],
-   kick:'Using AI to Co-Create Driving Questions', title:'Types of Prompts', cols:'g2',
-   cards:[
-     {icon:'edit', h4:'Refinement', p:'Reword an existing driving question.'},
-     {icon:'check', h4:'Alignment', p:'Does this align with Gold Standard PBL?'},
-     {icon:'bulb', h4:'Ideation', p:'Provide information and ask for starting ideas.'},
-     {icon:'msg', h4:'Collaboration', p:'Make it a conversation.'}]},
-
- {type:'twolist', label:'Team Work Time', icon:'users', accent:'var(--coral)',
-   kick:'Team Work Time', title:'Create a Strong Driving Question',
-   lead:'Together as a team, create an initial driving question.',
+ {type:'twolist', label:'Need-to-Knows · Sort', icon:'msg', accent:'var(--teal)', task:true,
+   kick:'Need-to-Knows', title:'Improve, Categorize, Share & Prioritize',
    cols:[
-     {icon:'q', h4:'For Consideration', items:['Have you identified common themes in your curriculum?','Have you decided on any authentic entry points?']},
-     {icon:'target', h4:'A Strong Driving Question Is…', items:['<b>Provocative or challenging</b> — because it is relevant, important, urgent, or otherwise interesting.','<b>Open-ended or complex</b> — no single right answer; requires in-depth inquiry and higher-level thinking.','<b>Linked to the core</b> of what you want students to learn — to answer it well, they gain the knowledge and skills targeted as project goals.']}]},
+     {icon:'edit', h4:'Individually — Improve & Categorize', items:['Do your questions ask for a variety of information?','Sort into <b>[C]</b> Closed-ended — answered with yes, no, or one word.','And <b>[O]</b> Open-ended — require an explanation.']},
+     {icon:'users', h4:'Collaboratively — Share & Prioritize', items:['Read your questions to your team (avoid comments or clarifying questions).','Discuss and prioritize which questions help solve the driving question the most.']}]},
+
+ {type:'figure', label:'Curriculum & Performance Mapping', accent:'var(--coral)',
+   kick:'Sub-Driving Questions & Benchmarks', title:'Curriculum & Performance Mapping',
+   img:'d4_curric_map', cap:'Overarching theme → essential questions → sub-questions → culminating project & performance tasks.'},
+
+ {type:'hierarchy', label:'Sub-Driving Question Template', accent:'var(--green)',
+   kick:'Sub-Driving Questions & Benchmarks', title:'Essential & Sub-Driving Questions',
+   top:'Essential Question', mids:['Key Question','Key Question','Key Question'],
+   subs:['Sub-question','Sub-question','Sub-question','Sub-question','Sub-question','Sub-question']},
+
+ {type:'list', label:'Sub-Driving Q Template', icon:'edit', accent:'var(--blue)',
+   kick:'Tools', title:'Template for Sub-Driving & Essential Questions',
+   lead:'Use the shared template to develop your sub-driving and essential questions.',
+   links:[{label:'Open the Template Folder', url:'https://drive.google.com/drive/folders/14O3pQ3oeipYTnmh3dBD1IZ4EdwGJzi6X?usp=drive_link'}]},
+
+ {type:'section', label:'PBL Benchmarks', icon:'flag', accent:'var(--coral)',
+   title:'PBL Benchmarks', lead:'Using checkpoints to support feedback, revision, and deeper learning.'},
+
+ {type:'list', label:'Benchmark Questions', icon:'q', accent:'var(--blue)',
+   kick:'PBL Benchmarks', title:'Every Benchmark Should Answer',
+   bullets:['What are students producing or demonstrating?','What evidence will we look at?','What feedback will students receive?','What will students revise or do next?']},
+
+ {type:'cards', label:'Types of Benchmarks', icon:'layers', accent:'var(--teal)',
+   kick:'PBL Benchmarks', title:'Types of Benchmarks', cols:'g2',
+   cards:[
+     {icon:'target', h4:'1 · For Products', p:'What are students building?'},
+     {icon:'spark', h4:'2 · For Process', p:'Where are students in the inquiry / design cycle?'},
+     {icon:'check', h4:'3 · For Skills', p:'What skills are students practicing?'},
+     {icon:'q', h4:'4 · For Content', p:'What knowledge and concepts are students developing?'}]},
+
+ {type:'twolist', label:'Benchmarks · Products', icon:'target', accent:'var(--coral)',
+   kick:'Types of Benchmarks', title:'Benchmarks for Products',
+   lead:'From the final product, identify the smaller pieces students build along the way.',
+   cols:[
+     {icon:'flag', h4:'Backwards Build', items:['Final Product','Finishing','Framing','Foundation']},
+     {icon:'check', h4:'Keep in Mind', items:['Backwards planning.','Essential elements or components that lead to the final product.','Clear criteria + feedback before students move forward.']}]},
+
+ {type:'twolist', label:'Benchmarks · Process', icon:'spark', accent:'var(--amber)',
+   kick:'Types of Benchmarks', title:'Benchmarks for Process',
+   lead:'Help teachers assess how students are thinking, collaborating, deciding, and revising — not just what they have finished.',
+   cols:[
+     {icon:'spark', h4:'Creative Process Phases', items:['Inspiration Phase','Ideation Phase','Implementation Phase','Unknown Final Product']},
+     {icon:'check', h4:'Keep in Mind', items:['No predetermined final product.','Use a creative process (e.g., Design Thinking) as benchmarks.','Flexibility in how each benchmark is met.']}]},
+
+ {type:'twolist', label:'Benchmarks · Skills', icon:'msg', accent:'var(--blue)',
+   kick:'Types of Benchmarks', title:'Benchmarks for Skills',
+   lead:'Example skill — Communication — broken into key domains.',
+   cols:[
+     {icon:'msg', h4:'Communication, by Domain', items:['Eye Contact','Voice Inflection','Audience Awareness']},
+     {icon:'check', h4:'Keep in Mind', items:['What skill(s) do you want students to demonstrate?','Break skills down into key domains.','Get clear on how students show the skill in different modalities.']}]},
+
+ {type:'twolist', label:'Benchmarks · Content', icon:'layers', accent:'var(--green)',
+   kick:'Types of Benchmarks', title:'Benchmarks for Content',
+   lead:'Break the knowledge and concepts into demonstrable parts.',
+   cols:[
+     {icon:'layers', h4:'Content, by Domain', items:['Key Concept','Key Data or Evidence','Key Vocabulary','Key Application']},
+     {icon:'check', h4:'Keep in Mind', items:['What do you want students to know and understand?','Break down the knowledge and concepts.','Get clear on how students show understanding in different modalities.']}]},
+
+ {type:'list', label:'Key Questions', icon:'q', accent:'var(--teal)',
+   kick:'PBL Benchmarks', title:'Key Questions',
+   bullets:['<b>Product:</b> What will students build or produce along the way?','<b>Process:</b> Where will students pause in the inquiry / design cycle?','<b>Skills:</b> What transferable skills will students practice and demonstrate?','<b>Content:</b> What standards and concepts must students understand?','<b>Feedback:</b> Where will students receive critique and revise their work?']},
 
  {type:'closing', label:'Daily Feedback', icon:'msg', accent:'var(--amber)',
    kick:'Daily Feedback', title:'Breakfast of Champions',
@@ -802,7 +804,7 @@ function buildInner(s){
   const progress=document.getElementById('progress');
   const cnum=document.getElementById('cnum');
   document.getElementById('ctot').textContent=slides.length;
-  document.getElementById('agendaCount').textContent=slides.length+' slides · Day 4 Session';
+  document.getElementById('agendaCount').textContent=slides.length+' slides · Day 5 Session';
   let cur=0;
 
   const agenda=document.getElementById('agenda');
